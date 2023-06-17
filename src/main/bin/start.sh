@@ -16,6 +16,11 @@ docker run --name ${CONTAINER_NAME} \
 -v /docs/skywalking-agent/:/docs/skywalking-agent/ \
 -d ${IMAGE_NAME}
 
+#docker run --name skywalking-app \
+#-p 9091:9091 \
+#-v /docs/skywalking-agent/:/docs/skywalking-agent/ \
+#-d fuzhengwei/skywalking-app:1.2
+
 echo "容器部署成功 ${CONTAINER_NAME}"
 
 docker logs -f ${CONTAINER_NAME}
