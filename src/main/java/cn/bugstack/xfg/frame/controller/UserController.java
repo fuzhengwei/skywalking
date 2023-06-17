@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Random;
 
 @Slf4j
 @RestController
@@ -25,6 +26,7 @@ public class UserController {
     public UserRes queryUserInfo() {
         try {
             log.info("查询用户信息");
+            Thread.sleep(new Random().nextInt(50));
             List<UserInfo> userInfoList = userService.queryUserList();
             return UserRes.builder().userInfos(userInfoList).result(Result.buildSuccess()).build();
         } catch (Exception e) {
